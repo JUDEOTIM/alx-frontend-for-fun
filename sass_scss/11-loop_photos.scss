@@ -1,0 +1,17 @@
+// 10-backgrounds.scss
+
+$list-names: (
+  apple: 'apple-background.jpg',
+  banana: 'banana-background.jpg',
+  orange: 'orange-background.jpg'
+);
+
+// styles.scss
+
+@import '10-backgrounds';
+
+@each $name, $image in $list-names {
+  .#{ $name } {
+    background-image: url('#{ $image }');
+  }
+}

@@ -1,0 +1,15 @@
+// styles.scss
+
+$list_to_sort: (3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5);
+
+// Convert the list to a map with indices
+$map_to_sort: map-loop($list_to_sort, null, (value, index) -> (index: index + 1, value: value));
+
+// Sort the map based on values
+$sorted_map: map-keys($map_to_sort, 'value');
+
+// Convert the sorted map back to a list
+$sorted_list: map($sorted_map, (key) -> map-get($map_to_sort, key)['value']);
+
+// Print the sorted list in the debug output
+@debug $sorted_list;

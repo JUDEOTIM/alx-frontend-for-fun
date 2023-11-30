@@ -1,2 +1,5 @@
-/* debugging */
-@debug "Hello World"
+// hello-world.scss
+
+$hello-world-message: "Hello, World!";
+
+@debug $hello-world-message;

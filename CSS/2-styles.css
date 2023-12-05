@@ -1,0 +1,56 @@
+/* Reset some default styles for the checkbox */
+.toggle-cb {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    outline: none;
+    border: none;
+}
+
+.toggle {
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+}
+
+.toggle-label {
+    display: block;
+    width: 40px; /* Width of the toggle */
+    height: 20px; /* Height of the toggle */
+    background-color: #ccc; /* Background color of the toggle */
+    border-radius: 10px; /* Border radius to create a rounded appearance */
+    position: relative;
+}
+
+/* Style for the inner part of the toggle */
+.toggle-inner {
+    position: absolute;
+    width: 18px; /* Width of the inner part */
+    height: 18px; /* Height of the inner part */
+    background-color: #fff; /* Background color of the inner part */
+    border-radius: 50%; /* Create a circle for the inner part */
+    top: 1px;
+    left: 1px;
+    transition: transform 0.3s ease; /* Add a smooth transition effect */
+}
+
+/* Move the inner part to the right when the toggle is checked */
+.toggle-cb:checked + .toggle-label .toggle-inner {
+    transform: translateX(20px);
+}
+
+/* Style for the switch, the movable part of the toggle */
+.toggle-switch {
+    position: absolute;
+    width: 20px; /* Width of the switch */
+    height: 20px; /* Height of the switch */
+    background-color: #3498db; /* Background color of the switch */
+    border-radius: 50%; /* Create a circle for the switch */
+    top: 1px;
+    left: 1px;
+    transition: left 0.3s ease; /* Add a smooth transition effect */
+}
+
+/* Move the switch to the right when the toggle is checked */
+.toggle-cb:checked + .toggle-label .toggle-switch {
+    left: 20
